@@ -1,7 +1,8 @@
 import { pow } from "../tasks/sortedPowNumbers";
+import { arrToObj } from "../tasks/arrToObj";
 
-describe("pow", () => {
-  test("should return [1, 9, 16]", () => {
+describe("testing pow", () => {
+  test("pow 1.test", () => {
     const inpt = [3, 1, 4];
     const expectedOutput = [1, 9, 16];
 
@@ -9,7 +10,7 @@ describe("pow", () => {
     expect(result).toEqual(expectedOutput);
   });
 
-  test("should return [1, 9, 16]", () => {
+  test("pow 2.test", () => {
     const inpt = [3, 1, 4];
     const expectedOutput = [1, 9, 16];
 
@@ -17,7 +18,7 @@ describe("pow", () => {
     expect(result).toEqual(expectedOutput);
   });
 
-  test("should return [0, 1, 1, 4, 4]", () => {
+  test("pow 3.test", () => {
     const inpt = [-2, -1, 0, 2, 1];
     const expectedOutput = [0, 1, 1, 4, 4];
 
@@ -25,7 +26,7 @@ describe("pow", () => {
     expect(result).toEqual(expectedOutput);
   });
 
-  test("should return [2.25, 4.0, 6.25, 12.25]", () => {
+  test("pow 4.test", () => {
     const inpt = [2.5, 1.5, 3.5, 2.0];
     const expectedOutput = [2.25, 4.0, 6.25, 12.25];
 
@@ -33,7 +34,7 @@ describe("pow", () => {
     expect(result).toEqual(expectedOutput);
   });
 
-  test("should return []", () => {
+  test("pow 5.test", () => {
     const inpt = [];
     const expectedOutput = [];
 
@@ -41,11 +42,60 @@ describe("pow", () => {
     expect(result).toEqual(expectedOutput);
   });
 
-  test("should return [250000, 1000000, 2250000, 4000000]", () => {
+  test("pow 6.test", () => {
     const inpt = [1000, 500, 2000, 1500];
     const expectedOutput = [250000, 1000000, 2250000, 4000000];
 
     const result = pow(inpt);
     expect(result).toEqual(expectedOutput);
+  });
+});
+
+describe("testing arrToObj", () => {
+  test("arrToObj 1.test", () => {
+    const inpt = [
+      { id: "qwe", name: "John" },
+      { id: "fdsfs2", name: "Mary" },
+    ];
+    const expectedOutput = {
+      qwe: { id: "qwe", name: "John" },
+      fdsfs2: { id: "fdsfs2", name: "Mary" },
+    };
+
+    const result = arrToObj(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("arrToObj 2.test", () => {
+    const inpt = [
+      { id: "1qwe", name: "John" },
+      { id: "fdsfs2", name: "Mary" },
+    ];
+
+    expect(() => {
+      arrToObj(inpt);
+    }).toThrow("Invalid identifier: 1qwe");
+  });
+
+  test("arrToObj 3.test", () => {
+    const inpt = [
+      { id: "$qwe", name: "John" },
+      { id: "fdsfs2", name: "Mary" },
+    ];
+
+    expect(() => {
+      arrToObj(inpt);
+    }).toThrow("Invalid identifier: $qwe");
+  });
+
+  test("arrToObj 4.test", () => {
+    const inpt = [
+      { id: "qwe", name: "John" },
+      { id: "", name: "Mary" },
+    ];
+
+    expect(() => {
+      arrToObj(inpt);
+    }).toThrow("Invalid identifier: ");
   });
 });
