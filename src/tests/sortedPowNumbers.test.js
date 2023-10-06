@@ -49,4 +49,3 @@ describe("testing pow", () => {
     expect(result).toEqual(expectedOutput);
   });
 });
-
