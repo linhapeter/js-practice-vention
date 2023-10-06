@@ -1,4 +1,5 @@
 import { pow } from "../tasks/sortedPowNumbers";
+import { summEven } from "../tasks/summEven";
 
 describe("pow", () => {
   test("should return [1, 9, 16]", () => {
@@ -46,6 +47,64 @@ describe("pow", () => {
     const expectedOutput = [250000, 1000000, 2250000, 4000000];
 
     const result = pow(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+});
+
+describe("testing summEven", () => {
+  test("summEven 1.test", () => {
+    const inpt = [3];
+    const expectedOutput = 0;
+
+    const result = summEven(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("summEven 2.test", () => {
+    const inpt = [4];
+    const expectedOutput = 4;
+
+    const result = summEven(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("summEven 3.test", () => {
+    const inpt = [];
+    const expectedOutput = 0;
+
+    const result = summEven(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("summEven 4.test", () => {
+    const inpt = [2.5];
+    const expectedOutput = 0;
+
+    const result = summEven(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("summEven 5.test", () => {
+    const inpt = [0];
+    const expectedOutput = 0;
+
+    const result = summEven(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("summEven 6.test", () => {
+    const inpt = [-2];
+    const expectedOutput = -2;
+
+    const result = summEven(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("summEven 7.test", () => {
+    const inpt = [1, 2, -2];
+    const expectedOutput = 0;
+
+    const result = summEven(inpt);
     expect(result).toEqual(expectedOutput);
   });
 });
