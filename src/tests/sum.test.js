@@ -1,4 +1,5 @@
 import { pow } from "../tasks/sortedPowNumbers";
+import { countChars } from "../tasks/countChars";
 
 describe("pow", () => {
   test("should return [1, 9, 16]", () => {
@@ -46,6 +47,48 @@ describe("pow", () => {
     const expectedOutput = [250000, 1000000, 2250000, 4000000];
 
     const result = pow(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+});
+
+describe("testing countChars", () => {
+  test("countChars 1.test", () => {
+    const inpt = "a";
+    const expectedOutput = { a: 1 };
+
+    const result = countChars(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("countChars 2.test", () => {
+    const inpt = "aA";
+    const expectedOutput = { a: 1, A: 1 };
+
+    const result = countChars(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("countChars 3.test", () => {
+    const inpt = "";
+    const expectedOutput = {};
+
+    const result = countChars(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("countChars 4.test", () => {
+    const inpt = " word";
+    const expectedOutput = { " ": 1, w: 1, o: 1, r: 1, d: 1 };
+
+    const result = countChars(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("countChars 5.test", () => {
+    const inpt = "1aA";
+    const expectedOutput = { 1: 1, a: 1, A: 1 };
+
+    const result = countChars(inpt);
     expect(result).toEqual(expectedOutput);
   });
 });
