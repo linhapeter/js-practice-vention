@@ -13,6 +13,6 @@ export const arrToObj = (arr) => {
 };
 
 const idValidator = (id) => {
-  const identifierRegex = /^(?!\$)[a-zA-Z_$][a-zA-Z0-9_$]*$/;
+  const identifierRegex = /^[a-zA-Z_][a-zA-Z0-9_$]*$/;
   return identifierRegex.test(id);
 };
