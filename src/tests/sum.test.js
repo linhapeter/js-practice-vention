@@ -1,4 +1,5 @@
 import { pow } from "../tasks/sortedPowNumbers";
+import { longestStr } from "../tasks/longestStr";
 
 describe("pow", () => {
   test("should return [1, 9, 16]", () => {
@@ -46,6 +47,48 @@ describe("pow", () => {
     const expectedOutput = [250000, 1000000, 2250000, 4000000];
 
     const result = pow(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+});
+
+describe("testing longestStr", () => {
+  test("longestStr 1.test", () => {
+    const inpt = [];
+    const expectedOutput = "";
+
+    const result = longestStr(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("longestStr 2.test", () => {
+    const inpt = ["a", "A"];
+    const expectedOutput = "a";
+
+    const result = longestStr(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("longestStr 3.test", () => {
+    const inpt = [" ", "a"];
+    const expectedOutput = " ";
+
+    const result = longestStr(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("longestStr 4.test", () => {
+    const inpt = ["", "a"];
+    const expectedOutput = "a";
+
+    const result = longestStr(inpt);
+    expect(result).toEqual(expectedOutput);
+  });
+
+  test("longestStr 5.test", () => {
+    const inpt = ["e", "adw", "         "];
+    const expectedOutput = "         ";
+
+    const result = longestStr(inpt);
     expect(result).toEqual(expectedOutput);
   });
 });
