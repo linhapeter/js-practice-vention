@@ -1,18 +1,12 @@
 export const arrToObj = (arr) => {
-  const resultObj = arr.reduce((acc, obj) => {
-    acc[obj.id] = obj;
+  const identifierRegex = /^[a-zA-Z_][a-zA-Z0-9_$]*$/;
+  const filteredArr = arr.filter((obj) => identifierRegex.test(obj.id));
 
-    if (!idValidator(obj.id)) {
-      throw new Error(`Invalid identifier: ${obj.id}`);
-    }
+  const resultObj = filteredArr.reduce((acc, obj) => {
+    acc[obj.id] = obj;
 
     return acc;
   }, {});
 
   return resultObj;
-};
-
-const idValidator = (id) => {
-  const identifierRegex = /^[a-zA-Z_][a-zA-Z0-9_$]*$/;
-  return identifierRegex.test(id);
 };
