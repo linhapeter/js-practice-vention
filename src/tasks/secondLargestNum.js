@@ -3,8 +3,8 @@ export const secondLargestNum = (arr) => {
     throw new Error("Array needs at least 2 elements");
   }
 
-  let first = Number.NEGATIVE_INFINITY;
-  let second = Number.NEGATIVE_INFINITY;
+  let first = arr[0];
+  let second = arr[0];
 
   for (let index = 0; index < arr.length; index++) {
     if (arr[index] > first) {
