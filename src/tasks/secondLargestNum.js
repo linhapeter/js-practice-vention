@@ -10,7 +10,9 @@ export const secondLargestNum = (arr) => {
     if (arr[index] > first) {
       second = first;
       first = arr[index];
-    } else if (arr[index] > second) second = arr[index];
+    } else if (arr[index] > second) {
+      second = arr[index];
+    }
   }
   return second;
 };
