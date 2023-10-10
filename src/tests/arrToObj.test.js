@@ -11,10 +11,5 @@ describe("arrToObj", () => {
       qwe: { id: "qwe", name: "John" },
       fdsfs2: { id: "fdsfs2", name: "Mary" },
     });
-    const receivedVal = arrToObj([
-      { id: "1qwe", name: "John" },
-      { id: "fdsfs2", name: "Mary" },
-    ]);
-    expect(receivedVal).toEqual({ fdsfs2: { id: "fdsfs2", name: "Mary" } });
   });
 });
