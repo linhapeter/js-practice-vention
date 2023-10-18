@@ -2,5 +2,5 @@
 
 ## Installation
 
-> npm i
-> npm run test
+npm i
+npm run test
